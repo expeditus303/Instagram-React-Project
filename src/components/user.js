@@ -1,23 +1,13 @@
 import React from 'react'
 
 
-
-// while (!name || name.length > 20) {
-//     name = prompt('Qual é o seu nome')
-// } 
-
-// alert(`Olá ${name}`)
-
-
-
 const imageDefault = "./assets//sidebar/catanacomics 1.png"
-// const imageNew = prompt('Insira o link de uma imagem')
+
 
 export default function User() {
     return (
         <div class="upper_suggestion">
             <UserName imageProfile = {imageDefault} userName = "Robert" />
-            {/* <UserName imageProfile = {{!imageNew ? imageDefault : imageNew}} /> */}
         </div>
     );
 }
