@@ -1,0 +1,560 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+    /* BREAK */
+
+    margin: 0px auto;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #262626;
+    background-color: #e5e5e5;
+    width: 100%;
+}
+
+/* NÃO SEI PQ A CLASS BOLD NÃO FUNCIONA DUAS VEZES NO MESMO PARAGRAFO E QUANDO USO ID (ERRADAMENTE) FUNCIONA!!! */
+
+#tab_logo {
+    color: white;
+}
+
+#bold {
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: #262626;
+}
+
+.border {
+    border-bottom: 1px solid #dbdbdb;
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    left: 0;
+    width: 100%;
+}
+
+/* Início do header */
+.header {
+    width: 935px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+}
+
+.header_mobile {
+    display: none;
+    width: 935px;
+}
+
+.footer_mobile {
+    display: none;
+}
+
+.logo {
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+}
+
+#logo {
+    margin-right: 11px;
+    font-size: 25px;
+}
+
+.vertical_divisor {
+    width: 1px;
+    height: 22px;
+    background: #dbdbdb;
+}
+
+#instagram {
+    margin-top: 5px;
+    margin-left: 11px;
+}
+
+#search {
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    width: 215px;
+    height: 28px;
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.icons :nth-child(1) {
+    font-size: 18px;
+}
+
+.icons :nth-child(2) {
+    font-size: 18px;
+}
+
+.icons :nth-child(3) {
+    font-size: 18px;
+}
+
+.icons :nth-child(4) {
+    font-size: 18px;
+}
+
+/* Final do Header */
+
+/* container que abriga feed e side bar */
+.content {
+    width: 935px;
+    margin: auto;
+    margin-top: 88px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 54px;
+}
+
+/* feed de fotos */
+.feed {
+    margin-right: 321px;
+    width: 614px;
+}
+
+/* div que abriga os stories */
+.stories {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    height: 118px;
+    padding-left: 18px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    position: relative;
+}
+
+.button {
+    right: 8px;
+    position: absolute;
+    font-size: 28px;
+    color: #ffffff;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.4));
+}
+
+.stories_individual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    margin-right: 14px;
+}
+
+.stories_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.stories_image :nth-child(1) {
+    margin-bottom: 6px;
+    border-radius: 33px;
+}
+
+.circle_over {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post {
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+
+.post_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post_header_perfil {
+    margin: 15px 0px 13px 17px;
+}
+
+.post_header_perfil :nth-child(1) {
+    display: flex;
+    align-items: center;
+}
+
+/* Imagem do perfil acima da foto do post, que indica quem é que postou a foto */
+.profile_image_post {
+    margin-right: 15px;
+    width: 32px;
+}
+
+.profile_name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #262626;
+}
+
+.post_header_3pontos {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-right: 17px;
+}
+
+/* .ruler {
+    background-color: black;
+    width: 16px;
+    height: 16px;
+} */
+
+.photo :nth-child(1) {
+    width: 100%;
+}
+
+.photo_under {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 14px 14px 18px;
+    font-size: 18px;
+}
+
+.photo_icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85px;
+}
+
+.likes {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 18px;
+    margin-bottom: 14px;
+}
+
+.likes_photo {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.likes :nth-child(2) {
+    font-weight: 300;
+}
+
+.comment_section {
+    display: flex;
+    flex-direction: column;
+    padding-left: 18px;
+    margin-bottom: 14px;
+    padding: 0px 14px;
+}
+
+.comment_counter {
+    color: #8e8e8e;
+}
+
+.comment_and_like {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+}
+
+.comment {
+    display: flex;
+}
+
+.comment_name {
+    font-weight: bold;
+}
+
+.comment_text {
+    margin-left: 4px;
+}
+
+.date {
+    color: #8e8e8e;
+    font-size: 8px;
+    margin-top: 7px;
+}
+
+.comment_write {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#comment_write {
+    border: none;
+    width: 85%;
+}
+
+#comment_post {
+    border: none;
+    color: #b2dffc;
+    transition: color 2s;
+}
+
+#comment_post:hover {
+    color: #0095f6;
+    cursor: pointer;
+}
+
+.space {
+    height: 34px;
+    margin-top: 54px;
+}
+
+.space1 {
+    height: 24px;
+}
+
+.space2 {
+    height: 60px;
+}
+
+.space3 {
+    height: 57px;
+}
+
+/* side bar que irá sumir */
+.side_bar {
+    position: fixed;
+    width: 292px;
+    padding-left: 29px;
+    left: calc(50% + 146px);
+}
+
+.upper_suggestion_profile {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+    margin-top: 23px;
+}
+
+.container-pencil {
+    display: flex;
+    margin-top: 3px;
+    font-weight: 300;
+    color: #413e3e;
+}
+
+.container-pencil p {
+    margin-right: 5px;
+}
+
+.upper_suggestion_profile_name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 17px;
+}
+
+.imageProfile {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+.suggestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.suggestion_profile {
+    display: flex;
+    justify-content: space-between;
+    height: 32px;
+}
+
+/* .suggestion_profile img {
+    width: 32px;
+    height: 32px;
+} */
+
+#user_upper {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.suggestion_for_you {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+
+.suggestion_for_you :nth-child(1) {
+    color: #8e8e8e;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.suggestion_for_you :nth-child(2) {
+    color: #262626;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.suggestion_profile_name {
+    margin-left: 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.suggestion_profile_name :nth-child(1) {
+    color: #262626;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.suggestion_profile_name :nth-child(2) {
+    font-weight: 400;
+    font-size: 12px;
+    color: #8e8e8e;
+}
+
+.follow {
+    color: #139ef2;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.others :nth-child(1) {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    color: #c7c7c7;
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+@media (max-width: 935px) {
+    .header {
+        width: 100%;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .side_bar {
+        display: none;
+    }
+
+    .feed {
+        margin: auto;
+    }
+
+    .logo {
+        margin-left: 22px;
+    }
+
+    .icons {
+        margin-right: 22px;
+    }
+
+    .photo {
+        height: 100%;
+    }
+}
+
+@media (max-width: 614px) {
+    body {
+        background-color: #ffffff;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .space {
+        display: none;
+    }
+
+    .header_mobile {
+        display: inline;
+        width: 100%;
+
+        margin: auto;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 54px;
+    }
+
+    .footer_mobile {
+        display: inline;
+        width: 100%;
+        margin: auto;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 54px;
+        padding: 0px 22px;
+        box-sizing: border-box;
+        font-size: 25px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+    }
+
+    .icons {
+        justify-content: flex-end;
+        width: auto;
+        margin-right: 21px;
+    }
+
+    #logo {
+        margin: auto;
+        font-size: 25px;
+    }
+
+    #instagram {
+        margin-top: 5px;
+        margin-left: 0px;
+    }
+
+    .icons :nth-child(1) {
+        font-size: 25px;
+    }
+
+    .feed {
+        width: 100%;
+    }
+
+    .button {
+        display: none;
+    }
+
+    .stories {
+        border-left: none;
+        border-right: none;
+    }
+
+    .photo {
+        /* talvez eu devesse apagar isso aqui para o modo resposivo */
+        height: 100%;
+    }
+}
