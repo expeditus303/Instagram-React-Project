@@ -127,7 +127,7 @@ function Photo(props) {
 
     return (
         <div>
-            <div class="photo" onDoubleClick={() => { likePlusNumber(); redHeart(); OnPhoto()}}>
+            <div class="photo" onDoubleClick={() => {redHeart(); OnPhoto()}}>
                 {heartOnPhoto}
                 <img
                     src={props.PropsPostImage}

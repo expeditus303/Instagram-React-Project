@@ -260,6 +260,10 @@ a {
     width: 85px;
 }
 
+.whiteHeart, .redHeart:hover {
+    cursor: pointer;
+}
+
 .redHeart {
     color: red;
     visibility: visible;
@@ -272,6 +276,10 @@ a {
 
 .whiteHeart, .whitebookmark {
     visibility: visible;
+}
+
+.whitebookmark, .yellowBookmark:hover {
+    cursor: pointer;
 }
 
 .likes {
