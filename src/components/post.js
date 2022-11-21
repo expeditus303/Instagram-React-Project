@@ -153,9 +153,9 @@ function Photo(props) {
                     alt=""
                     class="likes_photo"
                 />
-                <p data-test="likes-number">
+                <p>
                     Curtido por <b id="bold">{props.PropsLikedBy}</b> e
-                    <b id="bold"> outras {likes} pessoas</b>
+                    <b id="bold" data-test="likes-number"> outras {likes} pessoas</b>
                 </p>
             </div>
         </div>

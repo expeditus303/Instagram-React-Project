@@ -39,6 +39,9 @@ function UserName(props) {
 
     function askImage() {
         let answer = prompt('Insira o link de uma imagem')
+        if (!answer) {
+            answer = image
+        }
         setImage(answer)
     }
     
