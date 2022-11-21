@@ -1,12 +1,14 @@
+import React from "react";
+
 export default function Post() {
 
     const postContent = [
         {
-            profileImage: "./assets//stories/meowed 1.png", profileName: "meowed", postImage: "./assets//gato-telefone 1.png", likedByImage: "./assets//stories/respondeai 1.png", likedBy: "respondeai", likeCounter: "101.523", commentCounter: "453", commentName: "Jupira", commentText: "Gato metido kkk :D", postDate: "26 SETEMBRO"
+            profileImage: "./assets//stories/meowed 1.png", profileName: "meowed", postImage: "./assets//gato-telefone 1.png", likedByImage: "./assets//stories/respondeai 1.png", likedBy: "respondeai", likeCounter: 101523, commentCounter: "453", commentName: "Jupira", commentText: "Gato metido kkk :D", postDate: "26 SETEMBRO"
         },
 
         {
-            profileImage: "./assets//stories/barked 1.png", profileName: "barked", postImage: "./assets//surf.png", likedByImage: "./assets//stories/adorableanimals 2.png", likedBy: "adorable_animals", likeCounter: "99.159", commentCounter: "753", commentName: "GabrielMedina", commentText: "Animal!!!", postDate: "25 SETEMBRO"
+            profileImage: "./assets//stories/barked 1.png", profileName: "barked", postImage: "./assets//surf.png", likedByImage: "./assets//stories/adorableanimals 2.png", likedBy: "adorable_animals", likeCounter: 99159, commentCounter: "753", commentName: "GabrielMedina", commentText: "Animal!!!", postDate: "25 SETEMBRO"
         }
     ]
 
@@ -16,20 +18,8 @@ export default function Post() {
                 <div class="post" data-test="post">
                     <PostHeader profileImage={p.profileImage} profileName={p.profileName} />
 
-                    <Photo PropsPostImage={p.postImage} />
+                    <Photo PropsPostImage={p.postImage} PropsLikedByImage={p.likedByImage} PropsLikedBy={p.likedBy} PropsLikeCounter={p.likeCounter} />
 
-                    <div class="photo_under">
-                        <div class="photo_icons">
-                            <ion-icon name="heart-outline" data-test="like-post"></ion-icon>
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                            <ion-icon name="paper-plane-outline"></ion-icon>
-                        </div>
-                        <div class="photo_bookmark">
-                            <ion-icon name="bookmark-outline" data-test="save-post"></ion-icon>
-                        </div>
-                    </div>
-
-                    <Likes PropsLikedByImage = {p.likedByImage} PropsLikedBy = {p.likedBy} PropsLikeCounter = {p.likeCounter} />
 
                     <div class="comment_section">
                         <p class="comment_counter">Ver todos os {p.commentCounter} comentários</p>
@@ -86,29 +76,90 @@ function PostHeader(props) {
 }
 
 function Photo(props) {
+    const whiteheart = <ion-icon name="heart-outline" data-test="like-post" class="whiteHeart" onClick={redHeart}></ion-icon>
+
+    const [heart, setHeart] = React.useState(whiteheart)
+
+    const whitebookmark = <ion-icon name="bookmark-outline" class="whitebookmark" data-test="save-post" onClick={yellowBookmark}></ion-icon>
+
+    const [bookmark, setBookmark] = React.useState(whitebookmark)
+
+    function redHeart() {
+        let corazon = <ion-icon name="heart" class="redHeart" onClick={whiteHeart}></ion-icon>
+        likePlusNumber()
+        setHeart(corazon)
+    }
+
+    function whiteHeart() {
+        let corazon = whiteheart
+        likeMinusNumber()
+        setHeart(corazon)
+    }
+
+    function yellowBookmark() {
+        let saved = <ion-icon name="bookmark" class="yellowBookmark" onClick={whiteBookmark}></ion-icon>
+        setBookmark(saved)
+    }
+
+    function whiteBookmark() {
+        let saved = whitebookmark
+        setBookmark(saved)
+    }
+
+    const [likes, setLikes] = React.useState(props.PropsLikeCounter)
+
+    let newLike = likes
+    function likePlusNumber() {
+        newLike++
+        setLikes(newLike)
+    }
+
+    function likeMinusNumber() {
+        newLike--
+        setLikes(newLike)
+    }
+
+    const [heartOnPhoto, setHeartOnPhoto] = React.useState("")
+
+    function OnPhoto(){
+        setHeartOnPhoto(<ion-icon name="heart" class="heartOnPhoto"></ion-icon>)
+    }
+
     return (
-        <div class="photo">
-            <img
-                src={props.PropsPostImage}
-                alt="post_photo"
-                data-test="post-image"
-            />
+        <div>
+            <div class="photo" onDoubleClick={() => { likePlusNumber(); redHeart(); OnPhoto()}}>
+                {heartOnPhoto}
+                <img
+                    src={props.PropsPostImage}
+                    alt="post_photo"
+                    data-test="post-image"
+                />
+            </div>
+
+            <div class="photo_under">
+                <div class="photo_icons">
+                    {heart}
+                    <ion-icon name="chatbubble-outline"></ion-icon>
+                    <ion-icon name="paper-plane-outline"></ion-icon>
+                </div>
+                <div class="photo_bookmark">
+                    {bookmark}
+                </div>
+            </div>
+
+            <div class="likes">
+                <img
+                    src={props.PropsLikedByImage}
+                    alt=""
+                    class="likes_photo"
+                />
+                <p data-test="likes-number">
+                    Curtido por <b id="bold">{props.PropsLikedBy}</b> e
+                    <b id="bold"> outras {likes} pessoas</b>
+                </p>
+            </div>
         </div>
     )
 }
 
-function Likes(props) {
-    return (
-        <div class="likes">
-            <img
-                src={props.PropsLikedByImage}
-                alt=""
-                class="likes_photo"
-            />
-            <p data-test="likes-number">
-                Curtido por <b id="bold">{props.PropsLikedBy}</b> e
-                <b id="bold">outras {props.PropsLikeCounter} pessoas</b>
-            </p>
-        </div>
-    )
-}
+

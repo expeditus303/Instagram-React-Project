@@ -223,6 +223,25 @@ a {
     height: 16px;
 } */
 
+.photo {
+    position: relative;
+}
+
+.heartOnPhoto {
+    position: absolute;
+    top: 50%;
+    animation-name: heart;
+    animation-duration: 0.5s;
+    scale: 8;
+    visibility: hidden;
+    color: white;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes heart {
+    from {scale: 0.2; visibility: visible;}
+}
+
 .photo :nth-child(1) {
     width: 100%;
 }
@@ -239,6 +258,20 @@ a {
     align-items: center;
     justify-content: space-between;
     width: 85px;
+}
+
+.redHeart {
+    color: red;
+    visibility: visible;
+}
+
+.yellowBookmark {
+    color: rgb(191, 175, 27);
+    visibility: visible;
+}
+
+.whiteHeart, .whitebookmark {
+    visibility: visible;
 }
 
 .likes {
@@ -372,6 +405,10 @@ a {
     border-radius: 50%;
 }
 
+.imageProfile:hover {
+    cursor: pointer;
+}
+
 .suggestion {
     display: flex;
     justify-content: space-between;
@@ -389,6 +426,10 @@ a {
     width: 32px;
     height: 32px;
 } */
+
+.clickName:hover{
+    cursor: pointer;
+}
 
 #user_upper {
     font-size: 14px;
