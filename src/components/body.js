@@ -1,15 +1,15 @@
 import Stories from "./stories"
-import Post from "./post"
+import Posts from "./posts"
 import Sidebar from "./sidebar"
 
 export default function Body() {
     return (
-        <div class="content">
-            <div class="space"></div>
-            <div class="feed">
+        <div className="content">
+            <div className="space"></div>
+            <div className="feed">
                 <Stories />
-                <div class="space1"></div>
-                <Post />
+                <div className="space1"></div>
+                <Posts />
             </div>
             <Sidebar />
         </div>

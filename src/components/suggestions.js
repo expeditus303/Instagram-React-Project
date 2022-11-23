@@ -1,3 +1,5 @@
+import Suggestion from "./suggestion"
+
 export default function Suggestions() {
 
     const suggestionContent = [
@@ -30,27 +32,18 @@ export default function Suggestions() {
 
     return (
         <div>
-            <div class="suggestion_for_you">
+            <div className="suggestion_for_you">
                 <p>Sugestões para você</p>
                 <p>Ver tudo</p>
-            </div>
+            </div> 
 
             
-                {suggestionContent.map((suggestioncontent) => (
-                <div class="suggestion">
-                    <div class="suggestion_profile">
-                        <img src={suggestioncontent.image} alt="" />
-                        <div class="suggestion_profile_name">
-                            <p>{suggestioncontent.name}</p>
-                            <p>Segue você</p>
-                        </div>
-                    </div>
-                    <p class="follow">Seguir</p>
-                </div>
-                ))}
+                {suggestionContent.map(suggestioncontent => 
+                
+                <Suggestion name = {suggestioncontent.name} image = {suggestioncontent.image} key = {suggestioncontent.name }/>)}
                 
            
-            <div class="others">
+            <div className="others">
                 <p>
                     Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos •
                     Localizações • Contas mais relevantes • Hashtags • Idioma

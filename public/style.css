@@ -132,17 +132,29 @@ a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    overflow: hidden;
+    overflow: scroll;
     height: 118px;
     padding-left: 18px;
+    padding-right: 18px;
     border: 1px solid #dbdbdb;
     border-radius: 3px;
     position: relative;
 }
 
+.stories::-webkit-scrollbar {
+    display: none;
+}
+
+.stories {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
 .button {
     right: 8px;
-    position: absolute;
+    position: sticky;
     font-size: 28px;
     color: #ffffff;
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.4));
@@ -154,6 +166,11 @@ a {
     align-items: center;
     font-size: 12px;
     margin-right: 14px;
+}
+
+
+.stories :nth-child(8) {
+    margin-right: 0px;
 }
 
 .stories_image {
@@ -227,20 +244,33 @@ a {
     position: relative;
 }
 
+.hidden {
+    display: none;
+}
+
 .heartOnPhoto {
     position: absolute;
     top: 50%;
-    animation-name: heart;
-    animation-duration: 0.5s;
-    scale: 8;
-    visibility: hidden;
+    scale: 12;
     color: white;
     animation-timing-function: ease-in-out;
+    visibility: visible;
 }
 
-@keyframes heart {
-    from {scale: 0.2; visibility: visible;}
+.scale-up-center {
+    animation: scale-up-center 0.4s ease-in-out both;
 }
+
+@keyframes scale-up-center {
+    0% {
+        transform: scale(0.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 .photo :nth-child(1) {
     width: 100%;
@@ -260,7 +290,10 @@ a {
     width: 85px;
 }
 
-.whiteHeart, .redHeart:hover {
+.whiteHeart,
+.redHeart,
+.photo_bookmark,
+.clickName:hover {
     cursor: pointer;
 }
 
@@ -274,12 +307,9 @@ a {
     visibility: visible;
 }
 
-.whiteHeart, .whitebookmark {
+.whiteHeart,
+.whitebookmark {
     visibility: visible;
-}
-
-.whitebookmark, .yellowBookmark:hover {
-    cursor: pointer;
 }
 
 .likes {
@@ -288,6 +318,7 @@ a {
     align-items: center;
     padding-left: 18px;
     margin-bottom: 14px;
+    color: rgb(49, 49, 49);
 }
 
 .likes_photo {
@@ -435,9 +466,6 @@ a {
     height: 32px;
 } */
 
-.clickName:hover{
-    cursor: pointer;
-}
 
 #user_upper {
     font-size: 14px;

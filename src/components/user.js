@@ -6,7 +6,7 @@ const imageDefault = "./assets//sidebar/catanacomics 1.png"
 
 export default function User() {
     return (
-        <div class="upper_suggestion">
+        <div className="upper_suggestion">
             <UserName imageProfile = {imageDefault} userName = "Robert" />
         </div>
     );
@@ -36,19 +36,19 @@ function UserName(props) {
     }
     
     return (
-        <div class="upper_suggestion_profile" data-test="user">
+        <div className="upper_suggestion_profile" data-test="user">
                 <img
-                    class = "imageProfile"
+                    className = "imageProfile"
                     src= {image}
                     alt=""
                     data-test="profile-image"
                     onClick = {askImage}
                 />
-                <div class="upper_suggestion_profile_name">
+                <div className="upper_suggestion_profile_name">
                     <p id="user_upper">{props.userName}</p>
-                    <div class="container-pencil" >
+                    <div className="container-pencil" >
                         <p data-test="name">{name}</p>
-                        <ion-icon name="pencil" data-test="edit-name" class = "clickName" onClick={askName} ></ion-icon>
+                        <ion-icon name="pencil" data-test="edit-name" class=" " id="ts" onClick={askName} ></ion-icon>
                     </div>
                 </div>
             </div>

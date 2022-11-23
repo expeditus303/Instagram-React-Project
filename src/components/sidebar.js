@@ -3,12 +3,12 @@ import Suggestions from "./suggestions"
 
 export default function Sidebar() {
     return (
-        <div class="side_bar">
+        <div className="side_bar">
             <User />
 
             <Suggestions />
 
-            <div class="others">
+            <div className="others">
                 <p>© 2021 INSTAGRAM DO FACEBOOK</p>
             </div>
         </div>
